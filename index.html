@@ -20,10 +20,11 @@
             padding: 2rem 0;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 2rem auto;
             padding: 0 20px;
         }
+        /* Profile Section */
         .profile-section {
             display: flex;
             gap: 20px;
@@ -37,21 +38,44 @@
         .profile-pic {
             width: 150px;
             height: 150px;
-            background-color: #ddd;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
+            object-fit: cover; /* Keeps image from stretching */
+            border: 3px solid #4a90e2;
         }
-        .elephant-card {
-            background: #e9ecef;
-            border-left: 10px solid #6c757d;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        h2 {
+        /* Photo Gallery */
+        .gallery-title {
+            text-align: center;
+            margin-top: 3rem;
             color: #2c3e50;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item p {
+            padding: 10px;
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: center;
+            color: #555;
         }
         footer {
             text-align: center;
@@ -71,24 +95,30 @@
     <div class="container">
         <!-- About Me Section -->
         <section class="profile-section">
-            <div class="profile-pic">👤</div>
+            <!-- Replace 'valve_guy.jpg' with your actual image path -->
+            <img src="valve_guy.jpg" alt="Profile Picture" class="profile-pic">
             <div>
                 <h2>About Me</h2>
-                <p>Hello! I'm glad you're here. I'm someone who loves exploring new things and, clearly, I have a very big appreciation for elephants.</p>
+                <p>Hello! I'm glad you're here. I'm someone who loves exploring new things and, clearly, I have a very big appreciation for elephants. Open your mind, open your eyes!</p>
             </div>
         </section>
 
-        <!-- Elephant Section -->
-        <section class="elephant-card">
-            <h2>The Elephant in the Room 🐘</h2>
-            <p>Why elephants? Because they are incredible! Here are a few reasons why we're basically best friends:</p>
-            <ul>
-                <li><strong>Memory:</strong> They never forget, and I try to keep up!</li>
-                <li><strong>Empathy:</strong> They are some of the most social and caring animals on Earth.</li>
-                <li><strong>Style:</strong> Let's be honest, those trunks are pretty cool.</li>
-            </ul>
-            <p><em>"Nature's great masterpiece, an elephant; the only harmless great thing." — John Donne</em></p>
-        </section>
+        <!-- Elephant Gallery Section -->
+        <h2 class="gallery-title">The Elephant Gallery 🐘</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="elephant1.jpg" alt="African Elephant">
+                <p>Majestic African Elephant</p>
+            </div>
+            <div class="gallery-item">
+                <img src="elephant2.jpg" alt="Baby Elephant">
+                <p>Just a happy baby elephant!</p>
+            </div>
+            <div class="gallery-item">
+                <img src="elephant3.jpg" alt="Elephant Family">
+                <p>Family is everything.</p>
+            </div>
+        </div>
     </div>
 
     <footer>
